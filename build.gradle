@@ -1,0 +1,28 @@
+//explicitly need to add manifest artifactId to inform the gradle from where to start the execution because in pom.xml we specify the starting point within the plugin
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example1'
+version = '1.0-SNAPSHOT'
+
+description = """MyMavenToGradle"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+        
+     maven { url "https://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.example.App'
+        )
+    }
+}
