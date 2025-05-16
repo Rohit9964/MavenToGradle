@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '🔄 Cloning GitHub repository...'
-                git branch: 'main', url: 'https://github.com/Rohit9964/MavenToGradle.git'
+                git branch: 'master', url: 'https://github.com/Rohit9964/MavenToGradle.git'
                 // Replace with your actual GitHub URL and branch name
             }
         }
